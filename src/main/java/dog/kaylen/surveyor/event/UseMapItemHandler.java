@@ -16,6 +16,11 @@ UseItemCallback.EVENT.register(
         // check if hand item is an empty map
         SurveyorClient.getInstance().getLogger().info("event fired");
         SurveyorClient.getInstance().getLogger().info(player.getMainHandStack());
+        // ensure we are the client
+        if (!world.isClient) {
+            return TypedActionResult.pass(ItemStack.EMPTY);
+        }
+        // check if the stack is correct
         if (!player.getMainHandStack().isOf(Registry.ITEM.get(new Identifier("minecraft:map")))) {
             return TypedActionResult.pass(ItemStack.EMPTY);
         }
