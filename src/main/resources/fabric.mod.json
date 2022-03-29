@@ -1,0 +1,25 @@
+{
+    "schemaVersion": 1,
+    "id": "surveyor",
+    "version": "${version}",
+    "name": "Surveyor",
+    "description": "Utility mod that brings mapping features to client-side Minecraft.",
+    "authors": ["kaylendog"],
+    "contact": {},
+    "license": "MIT",
+    "icon": "assets/surveyor/icon.png",
+    "environment": "*",
+    "entrypoints": {
+        "client": ["dog.kaylen.surveyor.SurveyorClient"],
+        "modmenu": ["dog.kaylen.surveyor.integration.modmenu.SurveyorModMenu"]
+    },
+    "mixins": ["surveyor.mixins.json"],
+    "depends": {
+        "fabricloader": ">=0.13.3",
+        "fabric": "*",
+        "minecraft": "1.18.2"
+    },
+    "suggests": {
+        "modmenu": ">=3"
+    }
+}
